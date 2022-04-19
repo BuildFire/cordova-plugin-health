@@ -51,6 +51,33 @@ dataTypes['oxygen_saturation'] = 'HKQuantityTypeIdentifierOxygenSaturation';
 dataTypes['vo2max'] = 'HKQuantityTypeIdentifierVO2Max';
 dataTypes['temperature'] = 'HKQuantityTypeIdentifierBodyTemperature';
 
+dataTypes['nutrition.biotin'] = 'HKQuantityTypeIdentifierDietaryBiotin';
+dataTypes['nutrition.chloride'] = 'HKQuantityTypeIdentifierDietaryChloride';
+dataTypes['nutrition.chromium'] = 'HKQuantityTypeIdentifierDietaryChromium';
+dataTypes['nutrition.copper'] = 'HKQuantityTypeIdentifierDietaryCopper';
+dataTypes['nutrition.folate'] = 'HKQuantityTypeIdentifierDietaryFolate';
+dataTypes['nutrition.iodine'] = 'HKQuantityTypeIdentifierDietaryIodine';
+dataTypes['nutrition.magnesium'] = 'HKQuantityTypeIdentifierDietaryMagnesium';
+dataTypes['nutrition.manganese'] = 'HKQuantityTypeIdentifierDietaryManganese';
+dataTypes['nutrition.molybdenum'] = 'HKQuantityTypeIdentifierDietaryMolybdenum';
+dataTypes['nutrition.niacin'] = 'HKQuantityTypeIdentifierDietaryNiacin';
+dataTypes['nutrition.pantothenic_acid'] = 'HKQuantityTypeIdentifierDietaryPantothenicAcid';
+dataTypes['nutrition.phosphorus'] = 'HKQuantityTypeIdentifierDietaryPhosphorus';
+dataTypes['nutrition.riboflavin'] = 'HKQuantityTypeIdentifierDietaryRiboflavin';
+dataTypes['nutrition.selenium'] = 'HKQuantityTypeIdentifierDietarySelenium';
+dataTypes['nutrition.thiamin'] = 'HKQuantityTypeIdentifierDietaryThiamin';
+dataTypes['nutrition.vitamin_B6'] = 'HKQuantityTypeIdentifierDietaryVitaminB6';
+dataTypes['nutrition.vitamin_B12'] = 'HKQuantityTypeIdentifierDietaryVitaminB12';
+dataTypes['nutrition.vitamin_D'] = 'HKQuantityTypeIdentifierDietaryVitaminD';
+dataTypes['nutrition.vitamin_E'] = 'HKQuantityTypeIdentifierDietaryVitaminE';
+dataTypes['nutrition.vitamin_K'] = 'HKQuantityTypeIdentifierDietaryVitaminK';
+dataTypes['nutrition.zinc'] = 'HKQuantityTypeIdentifierDietaryZinc';
+dataTypes['bmi'] = 'HKQuantityTypeIdentifierBodyMassIndex';
+dataTypes['lean_body_mass'] = 'HKQuantityTypeIdentifierLeanBodyMass';
+dataTypes['sleep'] = 'HKCategoryTypeIdentifierSleepAnalysis';
+dataTypes['stand_time'] = 'HKQuantityTypeIdentifierAppleStandTime';
+dataTypes['flights_climbed'] = 'HKQuantityTypeIdentifierFlightsClimbed';
+
 // for parseable units in HK, see https://developer.apple.com/documentation/healthkit/hkunit/1615733-unitfromstring?language=objc
 var units = [];
 units['steps'] = 'count';
@@ -94,6 +121,30 @@ units['resp_rate'] = 'count/min';
 units['oxygen_saturation'] = '%';
 units['vo2max'] = 'ml/(kg*min)';
 units['temperature'] = 'degC';
+    
+units['nutrition.biotin'] = 'mcg';
+units['nutrition.chloride'] = 'mg';
+units['nutrition.chromium'] = 'mcg';
+units['nutrition.copper'] = 'mg';
+units['nutrition.folate'] = 'mcg';
+units['nutrition.iodine'] = 'mcg';
+units['nutrition.magnesium'] = 'mg';
+units['nutrition.manganese'] = 'mg';
+units['nutrition.molybdenum'] = 'mcg';
+units['nutrition.niacin'] = 'mg';
+units['nutrition.pantothenic_acid'] = 'mg';
+units['nutrition.phosphorus'] = 'mg';
+units['nutrition.riboflavin'] = 'mg';
+units['nutrition.selenium'] = 'mcg';
+units['nutrition.thiamin'] = 'mg';
+units['nutrition.vitamin_B6'] = 'mg';
+units['nutrition.vitamin_B12'] = 'mcg';
+units['nutrition.vitamin_D'] = 'mcg';
+units['nutrition.vitamin_E'] = 'mg';
+units['nutrition.vitamin_K'] = 'mcg';
+units['nutrition.zinc'] = 'mg';
+units['lean_body_mass'] = 'kg';
+units['stand_time'] = 'min';
 
 // just a wrapper for querying Telerik's if HK is available
 Health.prototype.isAvailable = function (success, error) {
@@ -324,6 +375,17 @@ Health.prototype.query = function (opts, onSuccess, onError) {
           else if (opts.unit) res.unit = opts.unit;
           res.sourceName = samples[i].sourceName;
           res.sourceBundleId = samples[i].sourceBundleId;
+          res.sourceProductType = samples[i].sourceProductType;
+          res.sourceOSVersion = '';
+          if (samples[i].sourceOSVersionMajor || typeof samples[i].sourceOSVersionPatch == 'number') {
+            res.sourceOSVersion += samples[i].sourceOSVersionMajor;
+          }
+          if (samples[i].sourceOSVersionMinor || typeof samples[i].sourceOSVersionPatch == 'number') {
+            res.sourceOSVersion += '.' + samples[i].sourceOSVersionMinor;
+          }
+          if (samples[i].sourceOSVersionPatch || typeof samples[i].sourceOSVersionPatch == 'number') {
+            res.sourceOSVersion += '.' + samples[i].sourceOSVersionPatch;
+          }
           result.push(res);
         }
       };
