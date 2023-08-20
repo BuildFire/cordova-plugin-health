@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
   id="cordova-plugin-health"
-  version="2.0.3-bf-1.2">
+
+  version="2.0.3-bf-2.2">
 
   <name>Cordova Health</name>
 
