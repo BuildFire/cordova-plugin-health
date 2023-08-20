@@ -400,50 +400,50 @@ module.exports = {
 			},
 		},
 		'progesterone_test_result': { // HKCategoryTypeIdentifierProgesteroneTestResult
-		'1': {
-			typeCategoryKey: 1,
-			value: 'negative',
-		},
-		'2': {
-			typeCategoryKey: 2,
-			value: 'positive',
-		},
-		'3': {
-			typeCategoryKey: 3,
-			value: 'indeterminate',
-		}
+			'1': {
+				categoryTypeKey: 1,
+				value: 'negative',
+			},
+			'2': {
+				categoryTypeKey: 2,
+				value: 'positive',
+			},
+			'3': {
+				categoryTypeKey: 3,
+				value: 'indeterminate',
+			}
 		},
 		'pregnancy_test_result': { // HKCategoryValuePregnancyTestResult
-		'1': {
-			typeCategoryKey: 1,
-			value: 'negative',
-		},
-		'2': {
-			typeCategoryKey: 2,
-			value: 'positive',
-		},
-		'3': {
-			typeCategoryKey: 3,
-			value: 'indeterminate',
-		}
+			'1': {
+				categoryTypeKey: 1,
+				value: 'negative',
+			},
+			'2': {
+				categoryTypeKey: 2,
+				value: 'positive',
+			},
+			'3': {
+				categoryTypeKey: 3,
+				value: 'indeterminate',
+			}
 		},
 		'walking_steadiness_event': { // HKCategoryValueAppleWalkingSteadinessEvent
-		'1': {
-			typeCategoryKey: 1,
-			value: 'initial_low',
-		},
-		'2': {
-			typeCategoryKey: 2,
-			value: 'initial_very_low',
-		},
-		'3': {
-			typeCategoryKey: 3,
-			value: 'repeat_low',
-		},
-		'4': {
-			typeCategoryKey: 4,
-			value: 'repeat_very_low',
-		}
+			'1': {
+				categoryTypeKey: 1,
+				value: 'initial_low',
+			},
+			'2': {
+				categoryTypeKey: 2,
+				value: 'initial_very_low',
+			},
+			'3': {
+				categoryTypeKey: 3,
+				value: 'repeat_low',
+			},
+			'4': {
+				categoryTypeKey: 4,
+				value: 'repeat_very_low',
+			}
 		},
 	}
 };

@@ -759,7 +759,8 @@ var prepareCorrelation = function (data, dataType) {
 	res.sourceProductType = data.sourceProductType || "";
 	res.sourceOSVersion = '';
 	res.sourceVersion = data.sourceVersion || "";
-	res.measureName = (data["categoryType.identifier"] || data.quantityType || data.correlationType || "");
+	res.HKMeasureName = (data["categoryType.identifier"] || data.quantityType || data.correlationType || "");
+	res.measureName = Health.prototype.getFormattedName(res.HKMeasureName);
 	if (data.sourceOSVersionMajor || typeof data.sourceOSVersionPatch == 'number') {
 		res.sourceOSVersion += data.sourceOSVersionMajor;
 	}
