@@ -351,7 +351,7 @@
 
   } else if ([which isEqualToString:@"sledding"]) { return HKWorkoutActivityTypeSnowSports;
 
-  } else if ([which isEqualToString:@"snowboarding"]) { return HKWorkoutActivityTypeSnowSports;
+  } else if ([which isEqualToString:@"snowboarding"]) { return HKWorkoutActivityTypeSnowboarding;
 
   } else if ([which isEqualToString:@"snowmobile"]) { return HKWorkoutActivityTypeSnowSports;
 
@@ -439,6 +439,10 @@
   if ([which isEqualToString:@"archery"]) { return @"HKWorkoutActivityTypeArchery";
 
   } else if ([which isEqualToString:@"badminton"]) { return @"HKWorkoutActivityTypeBadminton";
+
+  } else if ([which isEqualToString:@"flexibility"]) { return  @"HKWorkoutActivityTypeFlexibility";
+      
+  } else if ([which isEqualToString:@"step_training"]) { return  @"HKWorkoutActivityTypeStepTraining";
 
   } else if ([which isEqualToString:@"baseball"]) { return @"HKWorkoutActivityTypeBaseball";
 
@@ -609,7 +613,7 @@
 
   } else if ([which isEqualToString:@"sledding"]) { return @"HKWorkoutActivityTypeSnowSports";
 
-  } else if ([which isEqualToString:@"snowboarding"]) { return @"HKWorkoutActivityTypeSnowSports";
+  } else if ([which isEqualToString:@"snowboarding"]) { return @"HKWorkoutActivityTypeSnowboarding";
 
   } else if ([which isEqualToString:@"snowmobile"]) { return @"HKWorkoutActivityTypeSnowSports";
 

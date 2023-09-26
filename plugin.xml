@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
   id="cordova-plugin-health"
 
-  version="2.0.3-bf-2.2">
+  version="2.0.3-bf-2.3">
 
   <name>Cordova Health</name>
 
